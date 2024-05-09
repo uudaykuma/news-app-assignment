@@ -30,7 +30,7 @@ export const actions = {
 
         const myKey = process.env.MY_NEWS_API_KEYS
         if(!payload) {
-            const res =  await fetch(`https://newsapi.org/v2/everything?q=all&pageSize=${state.pageSize}&apiKey=${'dc5e66a1c7454fd28d5562fffe56579a'}`).then(res => res.json())
+            const res =  await fetch(`https://newsapi.org/v2/everything?q=all&pageSize=${state.pageSize}&apiKey=${myKey}`).then(res => res.json())
             commit('setAllNews', res)
         } else if(payload) {
             const { searchQuery, searchCountry, searchCategory} = payload
